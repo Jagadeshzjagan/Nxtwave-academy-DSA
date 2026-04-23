@@ -1,0 +1,23 @@
+\\Nxtwave  
+\\9.Ascending Letter Triangle
+
+example  
+i/p n=4
+
+o\p 
+A 
+B B 
+C C C 
+D D D D
+
+//solution  
+class solution {
+public:
+    void printAscLetterTriangle(int n) {
+        for (int i=0; i<n; i++){
+            for (int j=0; j<=i; j++){
+                cout<<char('A'+i)<<" "; 
+            }cout<<endl;
+        }
+    }
+};
