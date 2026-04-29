@@ -1,0 +1,21 @@
+\\Nxtwave  
+\\17.Right-Angled Triangle Asterisk Pattern
+
+example  
+i/p n=3 
+
+o\p 
+* 
+* * 
+* * *
+
+\\solution  
+class solution {
+public:
+    void printRightAngledTrianglePattern(int n) {
+        for (int i=0; i<n;i++){
+            for (int j=0; j<i+1;j++){cout<< "* ";
+            } cout<<endl;
+        }
+    }
+};
