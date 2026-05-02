@@ -1,0 +1,31 @@
+//nxtwave
+ 
+//Introduction
+
+  The STL in C++ provides a toolkit of algorithms, data structures, 
+  and containers for efficient and generic code development, 
+  simplifying tasks like data manipulation, searching, and sorting.
+
+//pair 
+  A pair in C++ combines two values, possibly of different types, 
+  into a single entity, useful for storing pairs of values with 'first' and 'second' elements accessible,
+  often used in data structures like maps.
+
+  Pair is a straightforward container defined in the <utility> header, 
+  comprising two data elements or objects and can also be used by adding <bits/stdc++.h> 
+
+//example 
+  
+  #include<bits/stdc++.h>
+  using namespace std;
+
+  int main() {
+   pair<int , double> mypair={10,5.0001};
+   cout << "1st pair 1st element :"<<mypair.first<<endl;
+   cout<<"2nd pair 2nd element :"<<mypair.second; 
+   return 0;
+  }
+  
+//output
+  1st pair 1st element :10
+  2nd pair 2nd element :5.0001
