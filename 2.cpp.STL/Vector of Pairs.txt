@@ -1,0 +1,26 @@
+//nxtwave
+
+//vector of pairs
+
+//example 1 
+#include <iostream>
+#include <vector> // or use #include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    vector<pair<int, int>> pairs;
+    pairs.push_back({10,20});
+    pairs.emplace_back(30,40);
+    cout << pairs[0].first << " " << pairs[0].second << endl; // Output - 10 20
+    cout << pairs[1].first << " " << pairs[1].second << endl; // Output - 30 40
+    return 0;
+} 
+  
+ //vector<pair<int, int>> pairs Declares a vector 'pairs' to store pairs of integers,
+ specifying the types of the pair's elements
+
+ //pairs.push_back({10, 20}) Adds a pair (10, 20) to 'pairs' using 'push_back'. 
+ Elements are accessible as '.first' and '.second'
+
+ //pairs.emplace_back(30, 40) Uses 'emplace_back' to add another pair (30, 40) to the vector with'.
+  first' and '.second' access
