@@ -1,0 +1,52 @@
+//nxtwave
+ 
+//Iteration 
+  Iterators are objects used to traverse containers like vectors. 
+
+//example  
+#include <iostream>
+#include <vector> // or use #include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    vector<int> v = {10, 20, 30, 40, 50};
+    
+    // 1. Initialize a vector iterator
+    vector<int>::iterator it = v.begin();
+    vector<int>::iterator it1 = v.end();
+    
+    cout << "First element: " << *it << endl; // Output - First element: 10
+    cout << "Last element: " << *(--it1) << endl; // Output - Last element: 50
+    
+    // 2. Using rbegin() and rend() for reverse iteration
+    vector<int>::reverse_iterator rIt = v.rbegin();
+    vector<int>::reverse_iterator rEndIt = v.rend();
+
+    cout << "First element using reverse iterator: " << *rIt << endl; // Output - First element: 50
+    cout << "Last element using reverse iterator: " << *(--rEndIt) << endl; // Output - Last element: 10
+    
+    
+    // 3. Access the last element using v.back()
+    int lastElement = v.back();
+    // Print the last element
+    cout << "Last element using v.back(): " << lastElement << endl; // Output - Last element using v.back(): 50
+    
+    cout << endl;
+    return 0;
+} 
+ 
+
+//vector<int>::iterator it = v.begin() Initializes 'it' 
+  to the beginning of the vector using 'begin()'
+
+//vector<int>::iterator it1 = v.end(): 
+  Initializes 'it1' pointing one position past the last element of the vector using 'end()'
+
+//vector<int>::reverse_iterator rIt = v.rbegin() 
+Initializes 'rIt' for reverse iteration
+
+//vector<int>::reverse_iterator rEndIt = v.rend() 
+Initializes 'rEndIt' for reverse iteration, pointing one position past the end
+
+//int lastElement = v.back() Accesses and 
+stores the last element using 'back()'
