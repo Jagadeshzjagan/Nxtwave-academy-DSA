@@ -1,0 +1,52 @@
+//nxtwave
+
+//Printing vector
+
+//example  
+#include <iostream>
+#include <vector> // or use #include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    vector<int> v = {10, 20, 30, 40, 50};
+    // 1. Printing Vector Using a For Loop
+    cout << "Using a for loop:" << endl;
+    for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
+        cout << *it << " ";
+    }
+    cout << endl;
+    // 2. Printing Vector Using Auto with Iterators
+    cout << "Using auto with iterators:" << endl;
+    for (auto it = v.begin(); it != v.end(); it++) {
+        cout << *it << " ";
+    }
+    cout << endl;
+    // 3. Printing Vector Using Range-Based For Loop
+    cout << "Using a range-based for loop:" << endl;
+    for (int k : v) {
+        cout << k << " ";
+    }
+    cout << endl;
+    // 4. Printing Vector Using Auto with Range-Based For Loop
+    cout << "Using auto with range-based for loop:" << endl;
+    for (auto k : v) {
+        cout << k << " ";
+    }
+    cout << endl; // Output - 10 20 30 40 50 
+    return 0;
+} 
+
+//Using For Loop with Iterator: Looping through elements 
+using an declared iterator
+
+//Using Auto with Iterators: Simplifying code by deducing 
+the iterator's type with the 'auto' keyword
+
+//Using Range-Based For Loop: Directly iterating over vector
+ elements without explicit iterators
+
+//Using Auto with Range-Based For Loop: Combining the range-based for loop with 
+'auto' to deduce element types automatically
+
+//auto keyword is used for type inference, which allows the compiler
+ to automatically determine the data type of a variable based on its initializer or return value
