@@ -1,0 +1,85 @@
+\\Nxtwave  
+\\1.Vector Operations Challenge
+
+//example  
+input 
+8
+insert 1
+insert 2
+insert 3
+print 
+reverse 
+print
+delete 2
+size
+
+o\p 
+1 2 3
+3 2 1
+2
+
+\\solution  
+
+class solution {
+public:
+    void insertElement(vector<int> &arr, int x) {
+        arr.push_back(x);
+    }
+    void deleteElement(vector<int> &arr, int x) {
+        for (int i=0; i< (int)arr.size(); i++){
+            if (arr[i]==x){
+                arr.erase(arr.begin()+i);
+                break;
+            }
+        }
+    }
+    void reverseArray(vector<int> &arr) {
+        reverse(arr.begin(), arr.end());
+    }
+    void sizeOfArray(vector<int> &arr) {
+        cout<<arr.size()<<"\n";
+    }
+    void displayArray(vector<int> &arr) {
+        for (int i=0; i<(int)arr.size(); i++){
+            if(i>0){
+                cout<<" ";
+            }
+            cout<<arr[i];
+        }
+        cout<<endl;
+    }
+}; 
+
+
+/*
+int main() {
+    int n;
+    cin >> n;
+
+    vector<int> arr;
+    solution sol;
+
+    while (n--) {
+        string operation;
+        cin >> operation;
+
+        if (operation == "insert") {
+            int x;
+            cin >> x;
+            sol.insertElement(arr, x);
+        } else if (operation == "delete") {
+            int x;
+            cin >> x;
+            sol.deleteElement(arr, x);
+        } else if (operation == "reverse") {
+            sol.reverseArray(arr);
+        } else if (operation == "size") {
+            sol.sizeOfArray(arr);
+        } else if (operation == "print") {
+            sol.displayArray(arr);
+        }
+    }
+
+    return 0;
+}
+*/
