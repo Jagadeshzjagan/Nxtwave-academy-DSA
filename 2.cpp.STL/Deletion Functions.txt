@@ -1,0 +1,28 @@
+//nxtwave
+
+//Deletion Function
+
+//example 1 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v = {10, 20, 30, 40, 50};
+    // Removing the third element (index 2)
+    v.erase(v.begin() + 2); // v = {10, 20, 40, 50}
+    // Removing elements from index 1 to 2 (excluding 3)
+    v.erase(v.begin() + 1, v.begin() + 3); // v = {10, 50}
+    // Printing the vector after second erase
+    for (int element : v) {
+        cout << element << " ";
+    }
+    cout << endl;
+    return 0;
+} 
+
+//v.erase(v.begin() + 2) removes the third element (index 2) from the vector,
+  resulting in {10, 20, 40, 50}
+
+//v.erase(v.begin() + 1, v.begin() + 3) removes elements at indices 1 to 2 (inclusive to exclusive), 
+  making the vector {10, 50}
