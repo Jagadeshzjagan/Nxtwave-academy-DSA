@@ -1,0 +1,40 @@
+//nxtwave
+
+//size(), pop_back(), swap, clear() and empty()
+
+//example 1
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v = {10, 20, 30, 40, 50};
+    // Get the vector size
+    cout << "Vector size: " << v.size() << endl; // Output - 5
+    // Remove the last element
+    v.pop_back(); // v = {10, 20, 30, 40}
+    // Swap two vectors
+    vector<int> v1 = {100, 200, 300};
+    v.swap(v1); // v = {100, 200, 300}, v1 = {10, 20, 30, 40}
+    // Clear the vector
+    v1.clear(); // v1 = {}
+    // Check if the vector is empty
+    cout << "Is v1 empty? " << v1.empty() << endl;  // Output - Is v1 empty? 1
+    // Print the modified vectors
+    cout << "v: ";
+    for (int element : v) {
+        cout << element << " ";
+    }
+    cout << endl; // Output - 100 200 300 
+    return 0;
+}
+
+//Get the Vector Size The size() function returns the number of elements in the vector
+
+//Remove the Last Element v.pop_back() removes the last element from the vector
+
+//Swap Two Vectors v.swap(v1) swaps the contents of vectors v and v1
+
+//Clear the Vector v1.clear() clears all elements from the vector v1
+
+//Check If the Vector Is Empty v1.empty() checks if the vector v1 is empty
