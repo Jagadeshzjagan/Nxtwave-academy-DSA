@@ -1,0 +1,57 @@
+//Nxtwave  
+
+//Deque 
+  a deque is a container that lets you easily add or remove elements at the beginning
+  and end without needing continuous memory storage.
+
+Difference between vector  and  deque : 
+
+Memory Usage :  Vectors store data in one big block of memory, but deques use several smaller blocks, 
+                making deques better for adding and removing stuff at both ends.
+
+Adding and Removing :  Deques are great at putting things at the front and back with 
+                       operations like push_front, pop_front and push_back, pop_back.
+                       Vectors are best for adding and removing things at the end.
+
+//example 1 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    deque<int> myDeque;
+    
+    // Pushing elements
+    myDeque.push_back(1);        // Add 1 to the back
+    myDeque.push_front(2);       // Add 2 to the front
+    myDeque.emplace_back(3);     // Emplace 3 at the back
+    myDeque.emplace_front(4);    // Emplace 4 at the front
+    
+    // Popping elements
+    myDeque.pop_back();          // Remove the last element
+    myDeque.pop_front();         // Remove the first element
+    
+    // Accessing elements
+    int backElement = myDeque.back();   // Get the last element
+    int frontElement = myDeque.front(); // Get the first element
+    return 0;
+}
+
+Explanation : 
+
+//deque<int> myDeque :  Declares a deque variable named myDeque that will store integers.
+
+//myDeque.push_back(1) :  Adds 1 to the back of the deque.
+
+//myDeque.push_front(2) :  Adds 2 to the front of the deque.
+
+//myDeque.emplace_back(3) :  Emplaces 3 at the back of the deque.
+
+//myDeque.emplace_front(4) :  Emplaces 4 at the front of the deque.
+
+//myDeque.pop_back() :  Removes the last element.
+
+//myDeque.pop_front() :  Removes the first element.
+
+//myDeque.back() :  Retrieves the last element.
+
+//myDeque.front() :  Retrieves the first element.
