@@ -1,0 +1,70 @@
+//Nxtwave 
+
+//Stack 
+
+ A stack, follows Last-In, First-Out (LIFO) principle meaning that 
+ the last element added to the stack is the first one to be removed,
+ is a linear data structure with fundamental operations including push, pop, 
+ and auxiliary functions like top, size, empty, and swap.
+
+//Real Life Use Case
+
+ In the analogy of kitchen plates, pushing washes and adds a plate to the stack, 
+ while popping retrieves the top plate for use. "Empty" checks if plates remain, 
+ "top" shows the top plate, and "size" indicates the stack's plate count. For exchanging stacks, "swap" is employed.
+
+//Basic operations
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    stack<int> stk;
+    
+    // Push or Emplace elements into the stack
+    stk.push(10); // {10}
+    stk.push(20); // {20, 10}
+    stk.push(30); // {30, 20, 10}
+    stk.emplace(40); // {40, 30, 20, 10}
+    stk.emplace(50); // top -> {50, 40, 30, 20, 10} -> bottom
+    
+    // Display the top element
+    cout << "Top element: " << stk.top() << endl; // 50
+    
+    // Pop elements from the stack
+    stk.pop();  // Removes the top element
+    
+    // Check if the stack is empty
+    if (stk.empty()) {
+        cout << "Stack is empty." << endl;
+    } else {
+        cout << "Stack is not empty." << endl;
+    }
+    
+    // Display the size of the stack
+    cout << "Size of stack after pop: " << stk.size() << endl; // 4
+    
+    stack<int> anotherStk;
+    anotherStk.push(99); // {99}
+    anotherStk.push(88); // top -> {88, 99} -> bottom
+    stk.swap(anotherStk);
+    
+    // Printing stacks top after swap
+    cout << "Stk top: " << stk.top() << " and anotherStk top: " << anotherStk.top() << " "; // Stk top: 88 anotherStk: 40
+    return 0;
+} 
+
+
+//stack<int> stk :  Declare a stack named stk for storing integers.
+
+//stk.push() :  stk.emplace() Push or emplace elements onto the stack.
+
+//stk.top() :  Display the top element of the stack.
+
+//stk.pop() :  Remove the top element from the stack.
+
+//stk.empty() :  Check if the stack is empty and print the result.
+
+//stk.size() :  Display the size of the stack after popping an element.
+
+//stk.swap(anotherStk) :  Swap the contents of stk with anotherStk.
