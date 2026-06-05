@@ -1,0 +1,47 @@
+\\Nxtwave  
+\\3.E-commerce Order Processing
+
+//example  
+input
+4
+A Keyboard 3 30.00
+A Monitor 1 200.00
+U Keyboard 4 40.00
+C
+
+o\p  
+360.00  //total cost  
+
+
+//solution  
+#include<bits/stdc++.h>
+using namespace std;
+
+class solution{
+    public:
+    vector<pair<string, pair<int, double>>> myorders; 
+    
+    void addOrder(string itemName, int quantity, double price) {
+        myorders.push_back({itemName,{quantity, price}});
+        
+    }
+    
+    void updateOrder(string itemName, int newQuantity, double newPrice) {
+        for(auto &each: myorders){
+            if(each.first==itemName){
+                each.second={newQuantity,newPrice};
+                break;
+            }
+        }
+        
+    }
+    
+    double calculateTotalRevenue() {
+        double totalcost=0;
+        for (auto &each: myorders){
+            totalcost+= each.second. first *each.second.second ; 
+        } 
+        return totalcost ;
+        
+    }
+};
