@@ -1,0 +1,47 @@
+//Queue 
+
+In C++ STL (Standard Template Library), a queue is a container 
+that adheres to the First-In-First-Out (FIFO) principle, ensuring 
+the first element added is the first to be removed.
+
+//Real Life Use Case
+
+The supermarket checkout queue exemplifies a real-life application of a queue,
+where customers arrive, join in FIFO order, are served one at a time,
+and new arrivals continue to join the back.
+
+//Basic operation 
+
+#include <iostream>
+#include <queue>
+
+int main() {
+    std::queue<int> myQueue;
+    
+    // Push elements to the queue
+    myQueue.push(10); // {10}
+    myQueue.push(20); // {10, 20}
+    myQueue.push(30); // front -> {10, 20, 30} -> back
+    
+    // Front and Back
+    std::cout << "Front element: " << myQueue.front() << std::endl; // Output: Front element: 10
+    std::cout << "Back element: " << myQueue.back() << std::endl;   // Output: Back element: 30
+    
+    // Pop the front element
+    myQueue.pop();
+    std::cout << "After popping, front element: " << myQueue.front() << std::endl; // Output: After popping, front element: 20
+    return 0;
+}
+
+//Explanation : 
+
+//queue<int> myQueue :  Declare a queue named myQueue for storing integers.
+
+//myQueue.push() :  Push an integer into the queue.
+
+//myQueue.front() :  Print the front element of the queue.
+
+//myQueue.back() :  Print the back element of the queue.
+
+//myQueue.pop() :  Remove the front element from the queue. After this, 
+                   the front element becomes the next element in the queue.
