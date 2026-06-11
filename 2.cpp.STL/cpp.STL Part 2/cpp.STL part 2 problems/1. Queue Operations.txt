@@ -1,0 +1,30 @@
+//nxtwave 
+
+//1.Queue Operations 
+
+//input 
+
+n = 8  
+Elements to insert: 1 2 3 4 5 2 3 1  
+m = 5  
+Elements to find frequency: 1 3 2 9 10 
+
+// solution  
+
+class solution {
+  public:
+    void insert(queue<int> &q, int k){
+            q.push(k);
+        }
+        
+    int findFrequency(queue<int> q, int k){
+      int count= 0; 
+      while (!q.empty()){
+          if (q.front() == k){
+              count++;
+          }
+          q.pop();
+      }
+      return (count == 0 ? -1 : count); 
+    } 
+};
