@@ -1,0 +1,40 @@
+//Nxtwave //priority queue concepts 
+
+//5.Hospital Emergency Room Task Management 
+
+//inputs 
+5
+A 5 John
+A 10 Alice
+T
+A 7 Bob
+D
+
+//outputs 
+Alice
+Bob 
+
+//solution 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class solution{
+    public:
+    void addPatient(priority_queue<pair<int, string>>& patients, int severity, string name) {
+        patients.push({severity, name} );
+    }
+    
+    void treatPatient(priority_queue<pair<int, string>>& patients) {
+        if(!patients.empty()){
+            cout << patients.top().second<<endl; 
+            patients.pop();
+        }
+    }
+    
+    void displayNextPatient(priority_queue<pair<int, string>>& patients) {
+        if(!patients.empty()){
+            cout<<patients.top().second<<endl;
+        }
+    }
+}; 
