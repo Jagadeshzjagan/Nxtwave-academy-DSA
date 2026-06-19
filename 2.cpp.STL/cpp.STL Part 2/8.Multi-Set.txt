@@ -1,0 +1,57 @@
+//Nxtwave 
+
+//8.Multi-Set 
+A multi-set in C`STL is an container that allows you to store
+multiple values of the same type in a sorted order.
+It is similar to a set, but unlike set, it can contain duplicate elements.
+
+//Properties
+Sorted Yes, the elements are stored in sorted order.
+
+Unique No, it allows duplicate elements.
+
+//example 
+
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main() {
+    multiset<int> myMultiset;
+    // Insert
+    myMultiset.insert(5); // {5}
+    myMultiset.insert(2); // {2, 5}
+    myMultiset.insert(5); // {2, 5, 5}
+    myMultiset.insert(8); // {2, 5, 5, 8}
+    myMultiset.insert(2); // {2, 2, 5, 5, 8}
+    myMultiset.insert(5); // {2, 2, 5, 5, 5, 8}
+    myMultiset.insert(9); // {2, 2, 5, 5, 5, 8, 9}
+    // Erase
+    myMultiset.erase(5); // {2, 2, 8, 9}
+    // Find
+    auto it = myMultiset.find(2);
+    if (it != myMultiset.end()) {
+        cout << "Found: " << *it << endl; // Found
+    }
+    myMultiset.insert(2); // {2, 2, 2, 8, 9}
+
+    myMultiset.erase(myMultiset.find(2)); // {2,2,8,9} -> remove single element from multiple element of 2
+    // Count
+    int count = myMultiset.count(2);
+    cout << "Count of 2: " << count << endl;
+    return 0;
+}
+
+//Explanation :
+
+multiset<int> myMultiset :  Declare a multiset for storing integers where duplicates are allowed.
+
+myMultiset.insert() :  Insert elements into the myMultiset using the insert function.
+
+myMultiset.erase() :  Erase elements from the myMultiset using the erase function.
+
+myMultiset.find() :  Find an element in the myMultiset using the find function.
+
+myMultiset.erase(myMultiset.find(2)) :  Locates and removes the first instance of 2 from the multiset, regardless of having multiple instances of 2.
+
+myMultiset.count(element) :  Count the occurrences of a specific element in the myMultiset using the count function.
