@@ -1,0 +1,96 @@
+//Nxtwave 
+
+//1.Map 
+A map is a container in C++ that stores key-value pairs in a sorted order.
+It allows efficient retrieval and insertion of elements. 
+The key is used for indexing, and each key is associated with a value.
+
+//Syntax 
+
+map<string, string>New_Map = { { key1, value1 }, 
+                               { key2, value2 }, 
+                               { key3, value3 } }; 
+
+//Real-Life Use Cases
+A common real-life use case for a map could be storing person names as keys and
+ their corresponding Aadhaar card numbers as values. This allows you to quickly
+ look up the Aadhaar card number for a given person's name.
+
+//Key-Value Pair
+A key-value pair is a combination of a key and a value associated with that key.
+ In C++, this is represented using the pair class or simply as a map where keys map to values.
+ Key is unique and sorted.
+
+//Types of Declarations
+You can declare a map with various data types as keys and values. Common examples include:
+
+map<int, int>: Map with integer keys and integer values.
+
+map<int, pair<int, int>>: Map with integer keys and a pair of integers as values.
+
+map<pair<int, int>, int>: Map with a pair of integers as keys and integer values.
+
+map<char, string>: Map with character keys and string values.
+
+
+//example 
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    //key value pair
+    //key are sorted and unique
+    map<int,int> m1;
+    map<int, pair<int,int>>m2;
+    map<pair<int,int>,int>m3;
+    map<char,string>m4;
+    
+    m1[1]=3;
+    m1.insert({7,5});
+    m1.emplace(4,8);
+    /*If the same key is emplaced more than once, the map stores 
+    the first element only as the map is a container which does not
+    store multiple keys of the same value. */
+    
+    m1.emplace(4,9);
+    
+    for(auto i: m1)
+    {
+        cout<<i.first<<" "<<i.second<<endl;
+    }
+    
+    cout<<m1[4]<<endl; // 8
+    cout<<m1[10]<<endl; // 0 or NULL
+    
+    auto iter = m1.find(7);
+    cout<<(*iter).second<<endl; // 5
+    
+    auto iter_1 = m1.find(10);
+    //if a particular key is not found then it will  returns m1.end()
+    
+    /*Multimap - Duplicate keys, sorted order
+    unordered_map - Unique keys, Randomised order - O(1) in almost all the cases
+    worst case - O(N) */
+    
+    return 0;
+}
+
+
+//Explanation
+map<k, v> m: Declares a map m that stores key-value pairs with unique keys of type k and values of type v.
+
+m[k]=v: Assigns value v to key k. If k already exists in the map, its value is updated to v;
+otherwise, a new key-value pair is created.
+
+m[k]: Outputs the value associated with key k. If k does not exist, a new element with that key 
+and a default value (typically zero for primitive types) is inserted.
+
+m.insert({k, v}): Inserts the key-value pair {k, v} into the map. If k already exists,
+the insertion does not modify the map.
+
+m.emplace(k, v): Attempts to construct the key-value pair in-place with key k and value v. Similar to insert, 
+it does not modify existing elements.
+
+m.find(k): Returns an iterator to the element with key k. If k is not found, it returns an iterator to map::end.
+
+(*iter).second: Accesses the value part of the pair pointed to by iterator iter.
