@@ -1,0 +1,97 @@
+//Nxtwave 
+
+//3.Unordered Map 
+An unordered map in C++ is a container that stores key-value pairs in an unordered manner, 
+providing fast access to values based on their keys and ensuring the uniqueness of keys.
+his means that each key can map to a unique value.
+
+//syntax 
+#include <unordered_map>
+std::unordered_map<KeyType, ValueType> myMap; 
+
+//KeyType represents the type of keys you want to use.
+//ValueType represents the type of values you want to store. 
+
+//code  
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    // Unordered map declaration
+    unordered_map<int, int> um1;
+    unordered_map<int, pair<int, int>> um2;
+    unordered_map<char, string> um3;
+
+    // Inserting elements
+    um1[1] = 3;
+    um1.insert(make_pair(7, 5));
+    um1.emplace(4, 8);
+    um1[4] = 9;  // This will overwrite the previous value at key 4
+
+    // Iterating over unordered map elements
+    for(auto& kv : um1) {
+        cout << kv.first << " " << kv.second << endl;
+    }
+
+    // Accessing a single element
+    cout << "Value at key 4: " << um1[4] << endl;  // Should print 9
+
+    // Finding a single element
+    auto iter = um1.find(7);
+    if (iter != um1.end()) {
+        cout << "Value for key 7: " << iter->second << endl;  // Should print 5
+    } else {
+        cout << "Key 7 not found." << endl;
+    }
+
+    // Trying to find a key that doesn't exist
+    auto iter_1 = um1.find(10);
+    if (iter_1 == um1.end()) {
+        cout << "Key 10 not found." << endl;
+    }
+
+    // Using unordered map with different data types
+    um3['a'] = "apple";
+    um3.insert({'b', "banana"});
+    um3['a'] = "avocado";  // This will overwrite "apple" with "avocado"
+
+    for(auto& kv : um3) {
+        cout << kv.first << " " << kv.second << endl;
+    }
+
+    return 0;
+}
+
+
+//unordered_map<k, v> um: 
+Declares an unordered_map named um that stores key-value pairs with unique keys of type k and values of type v.
+
+//um[k] = v: 
+Assigns the value v to the key k in the map um. If k already exists in the map, its value is updated to v; otherwise, a new key-value pair is created.
+
+//um.insert(make_pair(k, v)):
+Inserts the key-value pair (k, v) into the map um. If k is already present in the map, this operation does not modify the map.
+
+//um.emplace(k, v): 
+
+Attempts to construct the key-value pair in-place within the map with key k and value v.
+Similar to insert, if the key k already exists, the map is not modified.
+
+//um.find(k): 
+Searches for the key k in the map um and returns an iterator to the element if the key is found; otherwise, it returns an iterator to unordered_map::end.
+
+//(*iter).second: 
+
+Using the iterator iter, accesses the value part of the key-value pair.
+If iter points to an element in the map, (*iter).second will provide the value associated with the key.
+
+//for(auto& kv : um): 
+
+This range-based for loop iterates over all key-value pairs in the unordered map um.
+kv is a reference to each pair, where kv.first is the key and kv.second is the value.
+
+//um.end(): 
+Returns an iterator pointing to the theoretical element that follows the last element in the unordered_map.
+This iterator is used to check if find operations succeed by comparing the result to um.end().
