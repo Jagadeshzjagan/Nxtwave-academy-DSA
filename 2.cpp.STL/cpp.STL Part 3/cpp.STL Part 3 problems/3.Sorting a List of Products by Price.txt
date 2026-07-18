@@ -1,0 +1,36 @@
+//Nxtwave 
+
+//3.Sorting a List of Products by Price 
+
+//input
+Products: 
+[
+    {"Laptop", 1000}, 
+    {"Phone", 500}, 
+    {"Tablet", 700}
+] 
+
+//output 
+Phone:500
+Tablet:700
+Laptop:10
+
+//solution 
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class solution{
+    public:
+    void sortProducts(vector<pair<string, int>>& products) {
+        sort(products.begin(), products.end(),[](const pair<string, int> &a, const pair<string, int> &b){
+         return a.second < b.second; 
+        });
+}
+    void displayProducts(const vector<pair<string, int>>& products) {
+        for(auto const& pair: products){
+            cout << pair.first<<":" << pair.second<< endl;
+        }
+    }
+};
+ 
